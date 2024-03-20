@@ -22,9 +22,9 @@ class ProductController extends Controller
        
       $authors = new ShowItems();
 
-        return view('authors', [
+        return view('page/authors', [
             // 'users' => User::all(),
-            // 'users' => User::paginate(3),
+            'type' => $authors->showType(),
              'authors' => $authors->getAuthors()
             
          ]);
@@ -34,10 +34,11 @@ class ProductController extends Controller
        
       $items = new ShowItems();
 
-       return view('items', [
-            // 'users' => User::all(),
-            // 'users' => User::paginate(3),
-             'books' => $items->getItems()
+       return view('page/items', [
+             'keys' => $items->showKeys(),
+            'type' => $items->showType(),
+             'items' => $items->getItems(),
+         
             
          ]);
     }
@@ -46,12 +47,16 @@ class ProductController extends Controller
 
       $reg = $request->query('type');
       $type = new ShowItems();
-      
+
+      $typekey = $type->showKeys();
+
+      //dd($typekey[$reg]);
        
-    return view('type', [
-            'request' => $type->findType($reg)
-           // 'users' => User::paginate(3),
-           // 'books' => $items->getItems()
+    return view('page/type', [
+            'request' => $type->findType($reg),
+            'type' => $type->showType(),
+            'key' => $typekey[$reg],
+            'typeItem' => $reg
            
         ]);
    }

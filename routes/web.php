@@ -3,6 +3,7 @@
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\UsersController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\AddProductController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -23,11 +24,15 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'showHome'])->name('showHome');
 
-Route::get('/authors', [ProductController::class, 'authors'])->name('authors');
+Route::get('/page/authors', [ProductController::class, 'authors'])->name('authors');
 
-Route::get('/items', [ProductController::class, 'products'])->name('products');
+Route::get('/page/items', [ProductController::class, 'products'])->name('products');
 
-Route::get('/type', [ProductController::class, 'type'])->name('type');
+Route::get('/page/type', [ProductController::class, 'type'])->name('type');
+
+Route::get('/page/add_product', [AddProductController::class, 'addproduct'])->name('addproduct');
+
+Route::post('/page/add_product', [AddProductController::class, 'addDb'])->name('addDb');
 
 //Route::middleware('auth')->group(function () {
     Route::get('/users', [UsersController::class, 'show'])->name('show');
@@ -46,3 +51,4 @@ Route::middleware('auth')->group(function () {
 
 
 require __DIR__.'/auth.php';
+

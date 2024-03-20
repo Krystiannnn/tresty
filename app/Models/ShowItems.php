@@ -23,31 +23,31 @@ class ShowItems extends Items{
 
     }
 
-    function getItems(){
-
-        $q = DB::table('book')
-        ->leftJoin('author', 'book.author_id', '=', 'author.id')
-        ->get();
-
-        $q2 = DB::table('comic')
-        ->leftJoin('author', 'comic.author_id', '=', 'author.id')
-        ->get();
-
-        $q3 = DB::table('short_story_collection')
-        ->leftJoin('author', 'short_story_collection.author_id', '=', 'author.id')
-        ->get();
-
-        $result = [$q,$q2,$q3];
+    function getItems() {
+      $result = [];
   
-        return $result;    
-
-    }
+      foreach ($this->type as $tableName) {
+          $q = DB::table($tableName)
+              ->leftJoin('author', $tableName . '.author_id', '=', 'author.id')
+              ->get();
+  
+          $result[$tableName] = $q;
+      }
+  
+      return $result;
+  }
 
     function showType(){
     
             return $this->type;
      
     }
+
+    function showKeys(){
+    
+      return $this->getKey();
+
+}
 
     function findType($t){
 
