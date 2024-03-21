@@ -23,8 +23,9 @@ INSTRUKCJA
 4. Zaloguj się do MySQL, dodaj bazę danych i przykładowego użytkownika
 5. Skopiuj zawartość .env.example do utworzonego pliku .env i uzupełnij dane
 6. Zainstaluj zależności :   composer install
-7. Wykonaj migrację: php artisan migrate:fresh
-8. Wypełnij bazę danych przykładowymi danymi :
+7. php artisan key:generate
+8. Wykonaj migrację: php artisan migrate:fresh
+9. Wypełnij bazę danych przykładowymi danymi :
    php artisan db:seed --class=AuthorSeeder |
   php artisan db:seed --class=BookSeeder |
    php artisan db:seed --class=ComicSeeder |
