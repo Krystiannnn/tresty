@@ -17,7 +17,7 @@ class ProductController extends Controller
       $authors = new ShowItems();
 
         return view('page/authors', [
-            // 'users' => User::all(),
+           
             'type' => $authors->showType(),
              'authors' => $authors->getAuthors()
             

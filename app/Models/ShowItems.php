@@ -6,13 +6,7 @@ use App\Models\Items;
 use Illuminate\Support\Facades\DB;
 
 class ShowItems extends Items{
-  //  public $name;
-  //  public $surname;
-  
- //   function __construct($name, $surname){
-  //      $this->name = $name;
-  //      $this->surname = $surname;
-  //  }
+ 
 
     function getAuthors(){
 

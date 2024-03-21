@@ -25,23 +25,7 @@ class AddProductController extends Controller
         ]);
     }
 
-   
-  //  public function addDb(Request $request): RedirectResponse
-  //  { 
-      //dd($request);
-   //   $request->validate([
-    //        'title' => 'required|string|max:255',
-    //        'price' => 'required',
-     //       'author_id' => 'numeric',
-     //       'genre' => 'required'
-            
-    //    ]);
-       
-      //  dd($validated);
-        // The blog post is valid...
-    
-    //    return redirect('/page/add_product');
-   // }
+  
 
     public function addDb(Request $request){
       

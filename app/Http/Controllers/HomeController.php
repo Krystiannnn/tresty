@@ -14,8 +14,7 @@ class HomeController extends Controller
        $type = new ShowItems();
 
          return view('welcome', [
-            // 'users' => User::all(),
-           // 'content' => $content,
+           
              'type' => $type->showType()
 
          ]);
