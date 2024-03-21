@@ -11,13 +11,7 @@ class ProductController extends Controller
 {
   
 
-   // public function showUserProfile(Request $request)
-   // {
-   //     $user_id = $request->query('user_id');
-        // Tutaj możesz wykonać inne operacje na przekazanym ID użytkownika
-        // np. pobranie danych z bazy danych, wyświetlenie profilu, itp.
-   // }
-    
+  
     public function authors(){
        
       $authors = new ShowItems();
