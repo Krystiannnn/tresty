@@ -25,9 +25,9 @@ INSTRUKCJA
 6. Zainstaluj zależności :   composer install
 7. Wykonaj migrację: php artisan migrate:fresh
 8. Wypełnij bazę danych przykładowymi danymi :
-   php artisan db:seed --class=AuthorSeeder
-  php artisan db:seed --class=BookSeeder
-   php artisan db:seed --class=ComicSeeder
-   php artisan db:seed --class=Short_story_collectionSeeder
+   php artisan db:seed --class=AuthorSeeder |
+  php artisan db:seed --class=BookSeeder |
+   php artisan db:seed --class=ComicSeeder |
+   php artisan db:seed --class=Short_story_collectionSeeder |
    uruchom serwer:   php artisan serve
    - wejdź pod adres:   http://127.0.0.1:8000/
